@@ -1,6 +1,8 @@
 :root {
     --ikemen-color: #20bafa;
     --ikemen-highlight-color: #80f0ff;
+    --nightly-color: #fa6020;
+    --nightly-highlight-color: #ffa080;
     --feature-bg: #222;
     --feature-text: #fff;
 }
@@ -60,10 +62,12 @@ a:hover {
     padding: 20px;
 }
 
-.header {
+.header,
+.buttons-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1em;
 }
 
 .logo {
@@ -76,9 +80,10 @@ a:hover {
 }
 
 .releases-button {
+    display: block;
     width: fit-content;
     height: fit-content;
-    margin-top: 1.5em;
+    margin-top: .5em;
     margin-bottom: .5em;
     padding: 15px;
     background-color: var(--ikemen-color);
@@ -98,6 +103,20 @@ a:hover {
     background-color: #000;
     color: var(--ikemen-color);
     transition: .1s;
+}
+
+.nightly-button {
+    background-color: var(--nightly-color);
+    color: #fff;
+}
+
+.nightly-button:hover {
+    background-color: var(--nightly-highlight-color);
+    color: #fff;
+}
+
+.nightly-button:active {
+    color: var(--nightly-color);
 }
 
 .filter-gray {

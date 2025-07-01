@@ -18,13 +18,16 @@ async function get_version_name() {
 async function set_release_data() {
     let name = await get_version_name()
     let os = get_OS();
-    let url = "https://github.com/ikemen-engine/Ikemen-GO/releases/latest";
+    let release_url = "https://github.com/ikemen-engine/Ikemen-GO/releases/latest";
+    let nightly_url = "https://github.com/ikemen-engine/Ikemen-GO/releases/tag/nightly";
 
     if (os != "") {
-        url = "https://github.com/ikemen-engine/Ikemen-GO/releases/download/" + name + "/Ikemen_GO-" + name + "-" + os + ".zip";
+        release_url = "https://github.com/ikemen-engine/Ikemen-GO/releases/download/" + name + "/Ikemen_GO-" + name + "-" + os + ".zip";
+        nightly_url = "https://github.com/ikemen-engine/Ikemen-GO/releases/download/nightly/Ikemen_GO-dev-" + os + ".zip";
     }
 
-    document.getElementsByClassName("releases-button")[0].href = url;
+    document.getElementsByClassName("releases-button")[0].href = release_url;
+    document.getElementsByClassName("nightly-button")[0].href = nightly_url;
 
     if (name[0] == "v") {name = name.slice(1)}
     document.getElementById("version").innerText = "Download latest version: " + name;

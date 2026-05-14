@@ -26,11 +26,12 @@ async function set_release_data() {
         nightly_url = "https://github.com/ikemen-engine/Ikemen-GO/releases/download/nightly/Ikemen_GO-dev-" + os + ".zip";
     }
 
-    document.getElementsByClassName("releases-button")[0].href = release_url;
-    document.getElementsByClassName("nightly-button")[0].href = nightly_url;
+    //document.getElementsByClassName("releases-button")[0].href = release_url;
+    //document.getElementsByClassName("nightly-button")[0].href = nightly_url;
+	document.getElementsByClassName("releases-button")[0].href = nightly_url;
 
     if (name[0] == "v") {name = name.slice(1)}
-    document.getElementById("version").innerText = "Download stable build: " + name;
+    //document.getElementById("version").innerText = "Download stable build: " + name;
 }
 
 set_release_data()

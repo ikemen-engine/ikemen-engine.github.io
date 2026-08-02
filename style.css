@@ -62,29 +62,35 @@ a:hover {
     padding: 20px;
 }
 
-.header,
-.buttons-container {
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 1em;
 }
 
+.buttons-container {
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
 .logo {
-    width: 20em;
+    width: 40em;
     transition: 2s;
+    margin: 1em;
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 1em var(--ikemen-color));
+    filter: drop-shadow(0 0 0.75em var(--ikemen-color));
 }
 
 .releases-button {
     display: block;
     width: fit-content;
     height: fit-content;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin: .5em;
     padding: 15px;
     background-color: var(--ikemen-color);
     text-decoration: none;
@@ -116,7 +122,9 @@ a:hover {
 }
 
 .nightly-button:active {
+	background-color: #000;
     color: var(--nightly-color);
+	transition: .1s;
 }
 
 .filter-gray {

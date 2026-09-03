@@ -1,3 +1,21 @@
+@keyframes cloud-scroll-up {
+  0% {
+    background-position : 0px 75%
+  }
+  100% {
+    background-position : -2559px 75%
+  }
+}
+
+@keyframes cloud-scroll-down {
+  0% {
+    background-position : 0px 25%
+  }
+  100% {
+    background-position : -2467px 25%
+  }
+}
+
 :root {
     --ikemen-color: #20bafa;
     --ikemen-highlight-color: #80f0ff;
@@ -26,7 +44,29 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    /*border-bottom: 1em var(--ikemen-color) solid;*/
+    border-bottom: 0.25em var(--ikemen-color) solid;
+    background: url(resources/sky.png);
+    background-size: cover;
+    background-position: 0% 25%;
+    position: relative;
+}
+
+.headline-graphic {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cloud-up {
+    background: url(resources/cloud-up.png);
+    animation: cloud-scroll-up 80s linear infinite;
+}
+
+.cloud-down {
+    background: url(resources/cloud-down.png);
+    animation: cloud-scroll-down 45s linear infinite;
 }
 
 h1 {
@@ -60,6 +100,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    z-index: 10;
 }
 
 .header {
@@ -71,7 +112,7 @@ a:hover {
 
 .buttons-container {
     display: flex;
-	flex-direction: row;
+    flex-direction: row;
     align-items: center;
     margin-bottom: 1em;
 }
@@ -122,9 +163,9 @@ a:hover {
 }
 
 .nightly-button:active {
-	background-color: #000;
+    background-color: #000;
     color: var(--nightly-color);
-	transition: .1s;
+    transition: .1s;
 }
 
 .filter-gray {
@@ -183,6 +224,11 @@ a:hover {
     width: 16em;
     min-height: 20em;
     margin: .5em;
+    transition: .2s;
+}
+
+.feature:hover {
+    filter: drop-shadow(0 0 0.25em var(--ikemen-color));
 }
 
 .feature p {

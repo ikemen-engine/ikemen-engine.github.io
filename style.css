@@ -118,6 +118,7 @@ a:hover {
 }
 
 .logo {
+    max-width: 100%;
     width: 40em;
     transition: 2s;
     margin: 1em;
